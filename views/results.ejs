@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                <h1>Results Page</h1>
+                <p>The movies matching your search</p> 
+                <p>
+                    <a class="btn btn-primary btn-lg" href="/">Search Again!</a> 
+                </p>
+            </div>
+        </header>
+        <div class="row text-center " style="display: flex; flex-wrap: wrap;"></div>
+        <%if(data["Search"]) {
+            data["Search"].forEach(function(movie){ %>
+        
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img style="height: 300px; width: 100%;" src=<%= movie["Poster"] %> alt="" >
+                </div>
+                <div class="caption" >
+                    <strong><%= movie["Title"] %></strong> - <%= movie["Year"] %>
+                </div>
+                <br>
+            </div>
+            <% }) 
+        }%>
+    </div>
+</div>
+    </body>
+</html> 

@@ -1,5 +1,6 @@
 # Movie-Finder
-#### This is a Web Application that uses oMDB APi for searching Movie.
+#### This is a Web Application that uses IMDb API Overview from RapidAPI
+Access movie and TV information similar to the official one. Get Title, Year, Metascore Rating, IMDB rating, Release date, Runtime, Genre, Directors, Writers, Actors, Plot, Awards, Posters,etc…
 #### Front End: HTML, CSS ,JS and Bootstrap
 #### Back End: NodeJS, Express
 

@@ -4,6 +4,11 @@
     <title>Movie Finder</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+        .thumbnail>img{
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -17,19 +22,22 @@
             </div>
         </header>
         <div class="row text-center " style="display: flex; flex-wrap: wrap;"></div>
-        <%if(data["Search"]) {
-            data["Search"].forEach(function(movie){ %>
-        
+        <%if(data) {
+            for(var i=0; i<data.length; i++){ 
+                if(data[i].title){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <img style="height: 300px; width: 100%;" src=<%= movie["Poster"] %> alt="" >
+                    <% if(data[i].image.url){ %>
+                        <img src="<%= data[i].image.url %>" height="300px"><h1></h1>
+                    <% } %>  
                 </div>
                 <div class="caption" >
-                    <strong><%= movie["Title"] %></strong> - <%= movie["Year"] %>
+                    <strong><%= data[i].title %></strong> - <%= data[i].year %>
                 </div>
                 <br>
             </div>
-            <% }) 
+                <% }
+            }
         }%>
     </div>
 </div>

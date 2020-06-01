@@ -10,11 +10,20 @@ app.get("/", function(req, res){
 
 app.get("/result",function(req, res){
     var query = req.query.search;
-    var url = "http://www.omdbapi.com/?s=" + query + "&apikey=[api_key]";
-    request(url, function(error, response, body){
+    var options = {
+        method: 'GET',
+        url: 'https://imdb8.p.rapidapi.com/title/find',
+        qs: {q: query},
+        headers: {
+          'x-rapidapi-host': 'imdb8.p.rapidapi.com',
+          'x-rapidapi-key': '5d51b4a86fmsh24b92e872987d13p174326jsn97b4eef1ffbb',
+          useQueryString: true
+        }
+      };
+    request(options, function(error, response, body){
         if(!error && response.statusCode === 200){
             var data = JSON.parse(body);
-            res.render("results", {data: data});
+            res.render("results", {data: data.results});
         }
     });
 });

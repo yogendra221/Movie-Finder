@@ -15,8 +15,8 @@ app.get("/result",function(req, res){
         url: 'https://imdb8.p.rapidapi.com/title/find',
         qs: {q: query},
         headers: {
-          'x-rapidapi-host': 'imdb8.p.rapidapi.com',
-          'x-rapidapi-key': '5d51b4a86fmsh24b92e872987d13p174326jsn97b4eef1ffbb',
+          'x-rapidapi-host': '<api host>',
+          'x-rapidapi-key': '<api Key>',
           useQueryString: true
         }
       };
